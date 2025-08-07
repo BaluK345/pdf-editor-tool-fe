@@ -1,0 +1,564 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+:root {
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.205 0 0);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: oklch(0.205 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.577 0.245 27.325);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --radius: 0.625rem;
+  --sidebar: oklch(1 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.145 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.145 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.985 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.396 0.141 25.723);
+  --destructive-foreground: oklch(0.637 0.237 25.331);
+  --border: oklch(0.269 0 0);
+  --input: oklch(0.269 0 0);
+  --ring: oklch(0.439 0 0);
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(0.269 0 0);
+  --sidebar-ring: oklch(0.439 0 0);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* MS Word Authentic Styling */
+.writing-mode-vertical {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+}
+
+/* Grid background for gridlines */
+.bg-grid {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.1) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* Print styles */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  .print-content,
+  .print-content * {
+    visibility: visible;
+  }
+  .print-content {
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+}
+
+/* Editor content styles - MS Word authentic */
+[contenteditable] {
+  caret-color: #000;
+  font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[contenteditable]:focus {
+  outline: none;
+}
+
+[contenteditable] p {
+  margin: 0 0 12pt 0;
+  line-height: inherit;
+}
+
+[contenteditable] ul,
+[contenteditable] ol {
+  margin: 0 0 12pt 0;
+  padding-left: 24pt;
+}
+
+[contenteditable] li {
+  margin: 0 0 6pt 0;
+}
+
+[contenteditable] table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 12pt 0;
+}
+
+[contenteditable] td,
+[contenteditable] th {
+  border: 1px solid #000;
+  padding: 8px;
+  text-align: left;
+  min-height: 20px;
+  vertical-align: top;
+}
+
+[contenteditable] img {
+  max-width: 100%;
+  height: auto;
+  margin: 12pt 0;
+  display: block;
+}
+
+[contenteditable] h1,
+[contenteditable] h2,
+[contenteditable] h3,
+[contenteditable] h4,
+[contenteditable] h5,
+[contenteditable] h6 {
+  margin: 18pt 0 12pt 0;
+  font-weight: bold;
+}
+
+[contenteditable] blockquote {
+  margin: 12pt 24pt;
+  padding-left: 12pt;
+  border-left: 3px solid #ccc;
+  font-style: italic;
+}
+
+/* MS Word Style Classes */
+.heading-1 {
+  font-size: 16pt !important;
+  font-weight: 700 !important;
+  color: #2f5496 !important;
+  margin: 18pt 0 12pt 0 !important;
+  display: block;
+  font-family: "Calibri Light", Calibri, sans-serif !important;
+}
+
+.heading-2 {
+  font-size: 13pt !important;
+  font-weight: 700 !important;
+  color: #2f5496 !important;
+  margin: 16pt 0 10pt 0 !important;
+  display: block;
+  font-family: "Calibri Light", Calibri, sans-serif !important;
+}
+
+.heading-3 {
+  font-size: 12pt !important;
+  font-weight: 700 !important;
+  color: #2f5496 !important;
+  margin: 14pt 0 8pt 0 !important;
+  display: block;
+  font-family: "Calibri Light", Calibri, sans-serif !important;
+}
+
+.title-text {
+  font-size: 28pt !important;
+  font-weight: 700 !important;
+  color: #2f5496 !important;
+  text-align: center !important;
+  margin-bottom: 24pt !important;
+  display: block;
+  font-family: "Calibri Light", Calibri, sans-serif !important;
+}
+
+.subtitle-text {
+  font-size: 11pt !important;
+  font-weight: 400 !important;
+  color: #666666 !important;
+  text-align: center !important;
+  margin-bottom: 18pt !important;
+  display: block;
+  font-style: italic !important;
+}
+
+.normal-text {
+  font-size: 11pt !important;
+  font-weight: 400 !important;
+  color: #000000 !important;
+  display: block;
+  font-family: Calibri, sans-serif !important;
+}
+
+.no-spacing {
+  font-size: 11pt !important;
+  font-weight: 400 !important;
+  color: #000000 !important;
+  margin: 0 !important;
+  line-height: 1 !important;
+}
+
+.subtle-emphasis {
+  font-size: 11pt !important;
+  font-weight: 400 !important;
+  color: #666666 !important;
+  font-style: italic !important;
+}
+
+.emphasis {
+  font-size: 11pt !important;
+  font-weight: 400 !important;
+  color: #2f5496 !important;
+  font-style: italic !important;
+}
+
+.intense-emphasis {
+  font-size: 11pt !important;
+  font-weight: 700 !important;
+  color: #2f5496 !important;
+  font-style: italic !important;
+}
+
+.strong {
+  font-size: 11pt !important;
+  font-weight: 700 !important;
+  color: #000000 !important;
+}
+
+.quote {
+  font-size: 11pt !important;
+  font-weight: 400 !important;
+  color: #666666 !important;
+  font-style: italic !important;
+  border-left: 3px solid #2f5496 !important;
+  padding-left: 12pt !important;
+  margin-left: 12pt !important;
+}
+
+.intense-quote {
+  font-size: 11pt !important;
+  font-weight: 700 !important;
+  color: #2f5496 !important;
+  font-style: italic !important;
+  border-left: 3px solid #2f5496 !important;
+  padding-left: 12pt !important;
+  margin-left: 12pt !important;
+}
+
+/* Selection styles */
+[contenteditable] ::selection {
+  background-color: #b3d4fc;
+}
+
+/* Comment highlighting */
+.comment-highlight {
+  background-color: #ffeb3b !important;
+  position: relative;
+  cursor: help;
+}
+
+/* Track changes styles */
+.inserted-text {
+  background-color: #c8e6c9 !important;
+  text-decoration: underline;
+}
+
+.deleted-text {
+  background-color: #ffcdd2 !important;
+  text-decoration: line-through;
+}
+
+/* Table editing styles */
+.editable-table:hover {
+  outline: 2px solid #0078d4;
+}
+
+.editable-table td:hover,
+.editable-table th:hover {
+  background-color: #f0f8ff !important;
+}
+
+/* Image editing styles */
+[contenteditable] img:hover {
+  outline: 2px solid #0078d4;
+  cursor: move;
+}
+
+/* Document elements */
+.document-header {
+  border-bottom: 1px solid #ccc !important;
+  padding-bottom: 12pt !important;
+  margin-bottom: 24pt !important;
+  text-align: center !important;
+}
+
+.document-footer {
+  border-top: 1px solid #ccc !important;
+  padding-top: 12pt !important;
+  margin-top: 24pt !important;
+  text-align: center !important;
+}
+
+.text-box {
+  border: 1px solid #000 !important;
+  padding: 8px !important;
+  margin: 12pt 0 !important;
+  display: inline-block !important;
+  min-width: 100px !important;
+  min-height: 50px !important;
+  background: white !important;
+}
+
+.page-number {
+  font-size: 10pt !important;
+  color: #666 !important;
+}
+
+.date-time {
+  font-size: 10pt !important;
+  color: #666 !important;
+}
+
+.table-of-contents {
+  margin-bottom: 24pt !important;
+}
+
+.footnote {
+  border-top: 1px solid #ccc !important;
+  padding-top: 6pt !important;
+  margin-top: 12pt !important;
+  font-size: 9pt !important;
+}
+
+.footnote-ref {
+  color: #0078d4 !important;
+  cursor: pointer !important;
+}
+
+.citation {
+  color: #0078d4 !important;
+}
+
+.bibliography {
+  margin-top: 24pt !important;
+}
+
+.watermark {
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) rotate(-45deg) !important;
+  font-size: 72pt !important;
+  color: rgba(0, 0, 0, 0.1) !important;
+  font-weight: bold !important;
+  pointer-events: none !important;
+  z-index: -1 !important;
+}
+
+/* Keyboard shortcut indicators */
+kbd {
+  background-color: #f7f7f7;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 0 0 2px #fff inset;
+  color: #333;
+  display: inline-block;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  line-height: 1.4;
+  margin: 0 0.1em;
+  padding: 0.1em 0.6em;
+  text-shadow: 0 1px 0 #fff;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .ribbon-content {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .ribbon-group {
+    min-width: auto;
+    flex: 1;
+  }
+
+  .document-area {
+    padding: 16px;
+  }
+
+  .document-page {
+    width: 100% !important;
+    transform: none !important;
+    max-width: none;
+  }
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  [contenteditable] {
+    border: 2px solid;
+  }
+
+  .ribbon-tab.active {
+    border-width: 3px;
+  }
+}
+
+/* Focus indicators for keyboard navigation */
+button:focus-visible,
+select:focus-visible,
+input:focus-visible {
+  outline: 2px solid #0078d4;
+  outline-offset: 2px;
+}
+
+/* Scrollbar styling - MS Office style */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* Theme variables */
+:root {
+  --theme-primary: #0078d4;
+  --theme-secondary: #106ebe;
+  --theme-accent: #005a9e;
+}
+
+/* MS Word button styling */
+.ms-word-button {
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  transition: all 0.2s ease;
+}
+
+.ms-word-button:hover {
+  background: #f3f2f1;
+  border-color: #d1d1d1;
+}
+
+.ms-word-button:active {
+  background: #edebe9;
+  border-color: #c8c6c4;
+}
+
+.ms-word-button.active {
+  background: #deecf9;
+  border-color: #0078d4;
+}
+
+/* Fullscreen styles */
+.fullscreen-editor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
+  background: white;
+}
